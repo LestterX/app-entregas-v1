@@ -1,4 +1,21 @@
 <h1 style="text-align: center;">app-entregas-v1</h1>
+
+## Instalação:
+
+Depende:
+
+- make
+- python3
+- pip
+
+### Para instalar esse projeto, execute:
+
+`make install`
+
+### Para executar:
+
+`make run`
+
 <h2>Funcionamento Geral</h2>
   Este sistema foi feito para agilizar o atendimento ao cliente. Sendo possível registrar seus pedidos de entrega e coleta
   de equipamentos e materiais. Nele foi adicionado a aba de ferramentas, onde de inicio foi implementado o <b>"Zap sem Contato"</b>,
