@@ -1,0 +1,47 @@
+{%extends 'base.html'%}
+{%block title %}Nova Ordem{%endblock%}
+{%block headconf %} 
+<link rel="icon" type="image/x-icon" href="../static/assets/img/nova-ordem-icon-white.png">
+{%endblock%}
+{%block classBody%}id='pg-nova-ordem'{%endblock%}
+{% block content %} 
+<form id="cliente" action="/nova-ordem" method="POST" lang="pt-br">
+    <h2>ORDEM: nº {%if ordem_atual == [] %} 0 {%else%} {{ ordem_atual[0][0] + 1 }} {%endif%}</h2>
+    <div><input required autofocus placeholder="Nome do Cliente" class="linha-unica" type="text" name="nome-cliente" id="nome-cliente"></div>
+    <div><input required placeholder="Endereço Completo" class="linha-unica" type="text" name="endereco-cliente" id="endereco-cliente"></div>
+    <div>
+        <input required placeholder="Telefone" type="text" name="telefone-cliente" id="telefone-cliente">
+        <input required placeholder="0,00" type="text" name="valor-servico" id="valor-servico">
+        <select required name="forma-de-pagamento" id="forma-de-pagamento">
+            <option value="">--Forma de Pagamento--</option>
+            <option value="sem custo">SEM CUSTO</option>
+            <option value="dinheiro">Dinheiro</option>
+            <option value="pix">Pix</option>
+            <option value="credito">Crédito</option>
+            <option value="debito">Débito</option>
+        </select>
+    </div>
+    <textarea form="cliente" placeholder="DESCRIÇÃO DO SERVIÇO" required rows="6" cols="36" name="descricao-servico" id="descricao-servico"></textarea>
+    <div id="bnt-form-cliente">
+        <button value="limpar" type="reset">Limpar</button>
+        <button value="submit" type="submit">Salvar</button>
+    </div>
+    <div class="clearboth"></div>
+</form>
+<script src="{{ url_for('static', filename='assets/javascript/nova_ordem_form.js') }}"></script>
+<script>
+    let campoSelect = document.getElementById('forma-de-pagamento')
+    campoSelect.addEventListener('change', ()=>{
+        let campoValorServico = document.getElementById('valor-servico')
+        if (campoSelect.value === 'sem custo'){
+            console.log('Desabilitado');
+            campoValorServico.value = null
+            campoValorServico.disabled = true
+        }
+        else{
+            console.log('Habilitado');
+            campoValorServico.disabled = false
+        }
+    }) 
+</script>
+{% endblock %}

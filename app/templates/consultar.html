@@ -1,0 +1,93 @@
+{%extends 'base.html'%}
+{%block title %}Consultar{%endblock%}
+{%block headconf %} 
+<link rel="icon" type="image/x-icon" href="../static/assets/img/consultar-icon-white.png">
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/consultar.css') }}">
+{%endblock%}
+{%block classBody%}id='pg-consultar'{%endblock%}
+{% block content %} 
+<table id="lista-ordens">
+    <thead>
+        <tr>
+            <th>Nº</th>
+            <th>Cliente</th>
+            <th>Endereço</th>
+            <th>Telefone</th>
+            <th>Valor</th>
+            <th>Pagamento</th>
+            <th>Pago</th>
+            <th>Coletado</th>
+            <th>Entregue</th>
+            <th>Descrição</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for ordem in ordens %}
+        <tr>
+            <td class="table-centro">{{ordem['id']}}</td>
+            <td>{{ordem['cliente']}}</td>
+            <td>{{ordem['endereco']}}</td>
+            <td>{{ordem['telefone']}}</td>
+            <td class="table-centro">{{ordem['valor']}}</td>
+            <td class="table-centro">{{ordem['forma_pagamento'].upper()}}</td>
+            <td class="table-centro">{% if ordem['pago'] == 'true'%} Sim {% else %} Não {% endif %}</td>
+            <td class="table-centro">{% if ordem['coletado'] == 'true'%} Sim {% else %} Não {% endif %}</td>
+            <td class="table-centro">{% if ordem['entregue'] == 'true'%} Sim {% else %} Não {% endif %}</td>
+            <td>{{ordem['descricao']}}</td>
+            <td id="tabela-acoes">
+                <a href="/consultar/editar-ordem/{{ordem['id']}}">
+                    <button style="background-color: rgb(99, 255, 75);">Editar</button>
+                </a>
+                <a href="/consultar/remover-ordem/{{ordem['id']}}">
+                    <button style="background-color: rgb(255, 112, 112);">Remover</button>
+                </a>
+            </td>
+        </tr>
+        {%endfor%}
+    </tbody>
+</table>
+<div id="bntsNP">
+    <div id="bnts">
+        <button class="bnt-previous">Anterior</button>
+        <div class="pages"></div>
+        <button class="bnt-next">Próximo</button>
+    </div>
+</div>
+<style>
+    #bntsNP{
+        margin-top: 25px;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+    }
+    #bntsNP button{
+        margin: 10px;
+    }
+    #bnts{
+        display: flex;
+        width: auto;
+        height: 100%;
+    }
+    .pages{
+        display: flex;
+        align-items: center;
+        border: 1px solid green;
+        
+    }
+    .page{
+        border: 1px solid #000;
+        background-color: aliceblue;
+        text-align: center;
+        padding: 3px 7px;
+        margin: 3px;
+    }
+    .page:hover{
+        cursor: pointer;
+        transform: scale(1.05);
+    }
+</style>
+<!-- <script src="{{ url_for('static', filename='assets/javascript/paginasConsultar.js') }}"></script> -->
+<script src="{{ url_for('static', filename='assets/javascript/paginacao.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/animacoes.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/media-query.css') }}">
+    {%block headconf %}{%endblock%}
+    <title>{%block title %}{%endblock%}</title>
+</head>
+<body {%block classBody%}{%endblock%}>
+    <div id="fixed-nav">
+        <div id="logo-empresa">
+            <a href=""><img src="../static/assets/img/logo-empresa-100pxR.png" alt="Nossa logo da Empresa"></a>
+        </div>
+        <ul id="menu-vertical">
+            <a href="/"><li id="homeli"><div class="img-item-mv" id="home"></div><span>Entregas</span></li></a>
+            <a href="/dashboard"><li id="dashboardli"><div class="img-item-mv" id="dashboard"></div><span>Dashboard</span></li></a>
+            <a href="/nova-ordem"><li id="novaordemli"><div class="img-item-mv" id="novaordem"></div><span>Nova Ordem</span></li></a>
+            <a href="/ferramentas"><li id="ferramentasli"><div class="img-item-mv" id="ferramentas"></div><span>Ferramentas</span></li></a>
+            <a href="/consultar"><li id="consultarli"><div class="img-item-mv" id="consultar"></div><span>Consultar</span></li></a>
+        </ul>
+    </div>
+    <div id="main-content">
+        <div id="nav-mobile">
+            <div id="bnt-voltar">
+                <div id="bnt-voltar-img"></div>
+            </div>
+            <div id="titulo-pg"></div>
+            <div id="bnt-menu">
+                <div id="bnt-menu-img" ></div>
+                <div id="dropdown-content">
+                    <div id="logo-empresa">
+                        <a href=""><img src="../static/assets/img/logo-empresa-100pxR.png" alt="Nossa logo da Empresa"></a>
+                    </div>
+                    <ul id="menu-vertical">
+                        <a href="/"><li id="homeli"><div class="img-item-mv" id="home"></div><span>Entregas</span></li></a>
+                        <a href="/dashboard"><li id="dashboardli"><div class="img-item-mv" id="dashboard"></div><span>Dashboard</span></li></a>
+                        <a href="/nova-ordem"><li id="novaordemli"><div class="img-item-mv" id="novaordem"></div><span>Nova Ordem</span></li></a>
+                        <a href="/ferramentas"><li id="ferramentasli"><div class="img-item-mv" id="ferramentas"></div><span>Ferramentas</span></li></a>
+                        <a href="/consultar"><li id="consultarli"><div class="img-item-mv" id="consultar"></div><span>Consultar</span></li></a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {%block content%}{%endblock%}
+    </div>
+    <script src="{{ url_for('static', filename='assets/javascript/dropdown.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/javascript/events.js')}}"></script>
+</body>
+</html>

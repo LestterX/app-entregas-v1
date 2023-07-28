@@ -1,0 +1,59 @@
+@media screen and (max-width: 1244px) {
+    #cards{
+        justify-content: center;
+    }
+}
+@media only screen and (max-width: 950px) {
+    #nav-mobile{
+        display: flex;
+    }
+    #main-content{
+        width: 100vw;
+    }
+    #fixed-nav{
+        display: none;
+    }
+    .card{
+        margin: 20px auto;
+    }
+    #semOrdens{
+        font-size: 1em;
+    }
+}
+@media only screen and (max-width: 500px) {
+    input, #descricao-servico{ /** NOVA ORDEM **/
+        margin: 10px auto;
+    }
+    #descricao-servico{
+        width: 98vw;
+    }
+    input.linha-unica{
+        width: 98vw;
+    }
+    #cliente{
+        width: 100vw;
+    }
+    #cards{
+        width: 90vw;
+    }
+    .card{
+        margin-top: 20px;
+        font-size: 0.8em;
+    }
+    .card .lado-esquerdo{
+        width: 76%;
+    }
+    .card .lado-direito{
+        width: 24%;
+    }
+    .card .lado-esquerdo .conteudo-esquerdo textarea{
+        width: 98%;
+    }
+    #linha-card{
+        display: block;
+    }
+    #semOrdens{
+        font-size: 0.7em;
+        height: 35px;
+    }
+}

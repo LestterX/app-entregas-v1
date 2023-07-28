@@ -1,0 +1,54 @@
+{%extends 'base.html'%}
+{%block title %}Editar Ordem ( {{id}} ){%endblock%}
+{%block headconf %} 
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/consultar.css') }}">
+{%endblock%}
+{%block classBody%}id='pg-editar-ordem'{%endblock%}
+{% block content %} 
+<form id="cliente" action="/consultar/editar-ordem/{{id}}" method="POST" lang="pt-br">
+    <h2>ORDEM: nº {{ id }}</h2>
+    <div><input value="{{ dados[0] }}" required autofocus placeholder="Nome do Cliente" class="linha-unica" type="text" name="nome-cliente" id="nome-cliente"></div>
+    <div><input value="{{ dados[1] }}" required placeholder="Endereço Completo" class="linha-unica" type="text" name="endereco-cliente" id="endereco-cliente"></div>
+    <div>
+        <input value="{{ dados[2] }}" required placeholder="Telefone" type="text" name="telefone-cliente" id="telefone-cliente">
+        <input value="{{ dados[3] }}" required placeholder="0,00" type="text" name="valor-servico" id="valor-servico">
+        <select required name="forma-de-pagamento" id="forma-de-pagamento">
+            <option value="{{ dados[4] }}">Forma Pgto: {{ dados[4].upper() }}</option>
+            <option value="dinheiro">Dinheiro</option>
+            <option value="pix">Pix</option>
+            <option value="credito">Crédito</option>
+            <option value="debito">Débito</option>
+        </select>
+    </div>
+    <textarea form="cliente" placeholder="DESCRIÇÃO DO SERVIÇO" required rows="6" cols="36" name="descricao-servico" id="descricao-servico">{{ dados[7] }}</textarea>
+    <div id="status">
+        <div id="status-name">
+            <span id="pagoP">PAGAMENTO</span>
+            <span id="EntregueE">ENTREGA</span>
+        </div>
+        <div id="status-options">
+            <select required name="servico-pago" id="servico-pago">
+                <option value="{{dados[5]}}">Status: {% if dados[5] == 'true' %} Pago {% else %} Pendente {% endif %}</option>
+                <option value="true">Pago: Sim</option>
+                <option value="false">Pago: Não</option>
+            </select>
+            <select required name="servico-entregue" id="servico-entregue">
+                <option value="{{dados[6]}}">Status: {% if dados[6] == 'true' %} Entregue {% else %} Pendente {% endif %}</option>
+                <option value="true">Entregue: Sim</option>
+                <option value="false">Entregue: Não</option>
+            </select>
+            <p id="status-coleta"><span>COLETA</span></p>
+            <select required name="servico-coletado" id="servico-coletado">
+                <option value="{{dados[8]}}">Status: {% if dados[8] == 'true' %} Coletado {% else %} Pendente {% endif %}</option>
+                <option value="true">Coletado: Sim</option>
+                <option value="false">Coletado: Não</option>
+            </select>
+        </div>  
+    </div>
+    <div id="bnt-form-cliente">
+        <button value="submit" type="submit">Salvar</button>
+    </div>
+    <div class="clearboth"></div>
+</form>
+<script src="{{ url_for('static', filename='assets/javascript/nova_ordem_form.js') }}"></script>
+{% endblock %}

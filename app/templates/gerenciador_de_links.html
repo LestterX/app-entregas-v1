@@ -1,0 +1,27 @@
+{% extends 'ferramentas.html'%}
+{% block ferramenta %}
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/gerenciador_de_links.css') }}" type="text/css">
+<div id="nav-ger-links">
+    <div class="bnt-func-ger-link-all">
+        <a href="/ferramentas/gerenciador-de-links/editar"><button class="bnt-func-ger-link">Editar</button></a>
+    </div> 
+    <input type="search"autofocus placeholder="Pesquisar..." name="searchbar" id="searchbar">
+</div> <!---->
+<div id="limit">
+    <!-- <div id="contador">
+        <h1>0</h1>
+    </div> -->
+    <div id="container">
+        {% for site in sites%}
+            <div class="box">
+                <h3>{{ site['nome'] }}</h3>
+                <a href="{{ site['link'] }}" target="_blank">
+                    <div class="bnt"></div></a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<script src="{{ url_for('static', filename='assets/javascript/searchbar_ger_links.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/javascript/contador_ger_links.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/javascript/bnts_ger_links.js') }}"></script>
+{% endblock %}

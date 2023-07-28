@@ -1,0 +1,79 @@
+:root{
+    --borderRadiusPadraoForm: 5px;
+    --corTemaPadrao1: rgba(255, 157, 0, 1);
+    --corTemaPadrao2: rgba(255, 157, 0, 0.5);
+    --corVerde1: rgb(25, 255, 0);
+}
+/** ----- NOVA ORDEM I -----
+**/
+#bnt-form-cliente button[type='reset']:hover,
+#bnt-form-cliente button[type='submit']:hover{
+    transform: scale(1.1);
+}
+/** ----- NOVA ORDEM F -----
+**/
+
+/** ----- FERRAMENTAS I -----
+**/
+#bnt-ferramenta:hover{
+    transform: scale(1.07);
+    color: #fff;
+    background-color: var(--corTemaPadrao1);
+}
+/** ----- FERRAMENTAS F -----
+**/
+
+/** ----- BARRA DE NAVEGAÇÃO LATERAL I -----
+**/
+#logo-empresa img:hover{
+    transform: scale(1.1);
+}
+#pg-ferramentas #ferramentasli,
+#pg-consultar #consultarli,
+#pg-dashboard #dashboardli,
+#pg-home #homeli,
+#pg-nova-ordem #novaordemli, /** MUDAR PARA MARCAR A PAGINA 1/4  **/
+#menu-vertical li:hover{
+    background-color: #fff;
+    color: #000;
+}
+#pg-ferramentas #ferramentasli span,
+#pg-consultar #consultarli span,
+#pg-dashboard #dashboardli span,
+#pg-home #homeli span,
+#pg-nova-ordem #novaordemli span, /** MUDAR PARA MARCAR A PAGINA 2/4  **/
+#menu-vertical li:hover span{
+    margin-left: 25px;
+    color: #000;
+}
+#pg-ferramentas li #ferramentas,
+#menu-vertical li:hover #ferramentas{ 
+    background: url('../img/ferramentas-icon-black.png') center center no-repeat;
+}
+#pg-home li #home,
+#menu-vertical li:hover #home{ 
+    background: url('../img/home-icon-black.png') center center no-repeat;
+}
+#pg-dashboard li #dashboard,
+#menu-vertical li:hover #dashboard{
+    background: url('../img/dashboard-icon-black.png') center center no-repeat;
+}
+#pg-nova-ordem li #novaordem, /** MUDAR PARA MARCAR A PAGINA 3/4  **/
+#menu-vertical li:hover #novaordem{
+    background: url('../img/nova-ordem-icon-black2.png') center center no-repeat;
+}
+#pg-consultar li #consultar,
+#menu-vertical li:hover #consultar{
+    background: url('../img/consultar-icon-black.png') center center no-repeat;
+}
+#pg-ferramentas li #ferramentas,
+#pg-dashboard li #dashboard,
+#pg-consultar li #consultar,
+#pg-home li #home,
+#pg-nova-ordem li #novaordem, /** MUDAR PARA MARCAR A PAGINA 4/4  **/
+#menu-vertical li:hover .img-item-mv{
+    margin-left: 35px;
+}
+/** ----- BARRA DE NAVEGAÇÃO LATERAL F -----
+**/
+

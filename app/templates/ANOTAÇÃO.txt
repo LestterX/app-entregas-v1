@@ -1,0 +1,12 @@
+<!-- <script> PROCURAR UMA FORMA DE ATUALIZAR A PÁGINA AO ATUALIZAR DANCO DE DADOS
+        let attFromServer = {{ attFromServer|tojson }}
+        let updatePage = setInterval(() =>{
+            console.log(attFromServer);
+            if (attFromServer === 'atualizarPagina'){
+                alert('funcionou')
+            }
+        }, 300)
+        let bntPressionado = document.querySelector('.bnt').addEventListener('click', () =>{
+            alert("Clicado")
+        })
+    </script> -->

@@ -1,0 +1,395 @@
+/** ----- GERAL I -----
+**/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --borderRadiusPadraoForm: 5px;
+    --corTemaPadrao1: rgba(255, 157, 0, 1);
+    --corTemaPadrao2: rgba(255, 157, 0, 0.5);
+    --corVerde1: rgb(25, 255, 0);
+}
+.clearboth{
+    clear: both;
+}
+#linha-card{
+    display: none;
+    margin-left: 10%;
+    width: 80%;
+    height: 1px;
+    background-color: var(--corTemaPadrao2);
+}
+/** ----- GERAL F -----
+**/
+
+/** ----- SEM ORDENS I -----
+**/
+#semOrdens{
+    display: none;
+    border: 1px solid #000;
+    border-radius: 8px;
+    margin: 35px auto;
+    width: 80%;
+    height: 45px;
+    background-color: var(--corTemaPadrao1);
+    text-align: center;
+    font-size: 1.2em;
+}
+#semOrdens h1{
+    font-weight: 900;
+}
+/** ----- SEM ORDENS F -----
+**/
+
+/** ----- BARRA DE NAVEGAÇÃO LATERAL I -----
+**/
+#logo-empresa img{
+    margin: 25px 0 40px 50px;
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
+    padding: 20px 0;
+}
+#fixed-nav, #dropdown-content{
+    position: fixed;
+    background-color: var(--corTemaPadrao1);
+    float: left;
+    width: 15%;
+    max-width: 204px;
+    min-width: 204px;
+    height: 100vh;
+}
+#ferramentas-nav a:link,
+#ferramentas-nav a:active,
+#ferramentas-nav a:visited,
+#menu-vertical a:link,
+#menu-vertical a:active,
+#menu-vertical a:visited{   
+    text-decoration: none;
+}
+#menu-vertical li{
+    text-decoration: none;
+    padding: 10px 0;
+    border-bottom: 1px solid #fff;
+}
+#menu-vertical #home{
+    background: url('../img/home-icon-white.png') center center no-repeat;
+}
+#menu-vertical #dashboard{
+    background: url('../img/dashboard-icon-white.png') center center no-repeat;
+}
+#menu-vertical #novaordem{
+    background: url('../img/nova-ordem-icon-white.png') center center no-repeat;
+}
+#menu-vertical #consultar{
+    background: url('../img/consultar-icon-white.png') center center no-repeat;
+}
+#menu-vertical #ferramentas{
+    background: url('../img/ferramentas-icon-white.png') center center no-repeat;
+}
+#menu-vertical li span{
+    margin-left: 15px;
+    color: #fff;
+    font-weight: 900;
+    font-size: 1.1em;
+}
+.img-item-mv{
+    margin-left: 30px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+/** ----- BARRA DE NAVEGAÇÃO LATERAL F -----
+**/
+
+
+/** ----- CONTEÚDO PRINCIPAL I -----
+**/
+#main-content{
+    float: right;
+    width: 84%;
+    height: 100vh;
+}
+/** ----- CONTEÚDO PRINCIPAL F -----
+**/
+
+/** ----- HOME I -----
+**/
+#cards{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 90%;
+    height: auto;
+}
+.card{
+    /* border: 1px solid var(--corTemaPadrao1); */
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 450px;
+    height: 200px;
+}
+.card .lado-esquerdo{
+    float: left;
+    height: 200px;
+    width: 342px;
+}
+.card .lado-esquerdo .ordem-valor{
+    background-color: var(--corTemaPadrao1);
+    width: 100%;
+    height: 30px;
+}
+.card .lado-esquerdo .ordem-valor span{
+    font-size: 1.6em;
+    font-weight: 700;
+}
+.card .lado-esquerdo .ordem-valor .ordem{
+    margin-left: 10px;
+    float: left;
+}
+.card .lado-esquerdo .ordem-valor .valor{
+    margin-right: 10px;
+    float: right;
+}
+.card .lado-esquerdo .conteudo-esquerdo{
+    width: 100%;
+    height: 157px;
+}
+.card .lado-esquerdo .conteudo-esquerdo p{
+    margin: 3px 1px;
+}
+.card .lado-esquerdo .conteudo-esquerdo .foma-pgto{
+    float: right;
+    margin-right: 10px;
+    font-weight: 900;
+}
+.card .lado-esquerdo .conteudo-esquerdo hr{
+    margin: 3px 0;
+}
+.card .lado-esquerdo .conteudo-esquerdo textarea{
+    margin: 0 1px;
+    border: none;
+    border-radius: var(--borderRadiusPadraoForm);
+    resize: none;
+}
+.card .lado-direito{
+    float: right;
+    height: 200px;
+    width: 106px;
+    border-left: 1px dotted #000;
+}
+.card .lado-direito .titulo-fechar{
+    background-color: #000;
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #fff;
+    width: 100%;
+    height: 30px;
+}
+.card .lado-direito .conteudo-direito{
+    border: 1px solid #fff;
+    width: 100%;
+    height: 160px;
+}
+.card .lado-direito .bnt{
+    border-radius: var(--borderRadiusPadraoForm);
+    margin: 3px auto;
+    width: 80px;
+    height: 35px;
+    background-color: rgb(255, 0, 0);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.12em;
+    text-align: center;
+}
+.card .lado-direito .bnt-imprimir{
+    background-color: rgb(0, 0, 0);
+}
+.card .lado-direito .bnt-pressionado{
+    background-color: var(--corVerde1);
+}
+.card a:link,
+.card a:active,
+.card a:visited{
+    text-decoration: none;
+    color: #000
+}
+.card .barra-de-fundo{
+    background-color: var(--corTemaPadrao1);
+    width: 100%;
+    height: 10px;
+}
+/** ----- HOME F -----
+**/
+
+/** ----- NOVA ORDEM I -----
+**/
+#cliente{
+    border-radius: var(--borderRadiusPadraoForm);
+    background-color: var(--corTemaPadrao2);
+    width: 450px;
+    margin: 60px auto;
+}
+#cliente h2{
+    background-color: var(--corTemaPadrao1);
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-weight: 900;
+}
+input{
+    border: none;
+    height: 35px;
+    border-radius: var(--borderRadiusPadraoForm);
+    margin: 10px 0;
+    font-size: 1.2em;
+    margin-left: 50px;
+}
+input.linha-unica{
+    width: 350px;
+}
+#telefone-cliente{
+    width: 120px;
+}
+#valor-servico{
+    width: 60px;
+    margin-left: 0;
+}
+select#forma-de-pagamento{
+    font-size: 0.8em;
+    border-radius: var(--borderRadiusPadraoForm);
+    /* margin-left: 40px; */
+    height: 40px;
+    width: 165px;
+}
+#descricao-servico{
+    margin-left: 50px;
+    margin-bottom: 5px;
+    resize: none;
+    font-size: 1.3em;
+    border: none;
+    border-radius: var(--borderRadiusPadraoForm);
+}
+#bnt-form-cliente{
+    margin: 0 auto;
+    width: 250px;
+}
+#bnt-form-cliente button[type='reset'],
+#bnt-form-cliente button[type='submit']{
+    margin: 10px auto;
+    width: 75px;
+    border-radius: var(--borderRadiusPadraoForm);
+    cursor: pointer;
+    font-size: 1.3em;
+}
+#bnt-form-cliente button[type='reset']{
+    float: left;
+    /* background-color: rgb(255, 0, 0); */
+}
+#bnt-form-cliente button[type='submit']{
+    float: right;
+    /* background-color: rgb(38, 255, 0); */
+}
+#bnt-form-cliente button[value='delete']{
+    float: left;
+}
+/** ----- NOVA ORDEM F -----
+**/
+
+/** ----- FERRAMENTAS I -----
+**/
+#ferramentas-nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    width: 100%;
+    height: 100px;
+    /* background-color: var(--corTemaPadrao1); */
+}
+.bnt-ferramenta{
+    display: inline-block;
+    color: #000;
+    border: 2px solid #000;
+    border-radius: 10px;
+    font-size: 1.2em;
+    text-align: center;
+    width: 150px;
+    height: auto;
+    background-color: var(--corTemaPadrao2);
+}
+#ferramentas-cont{
+    width: 100%;
+    height: auto;
+    border-top: 2px solid #000;
+}
+
+/** ----- NAV MOBILE I -----
+**/
+#nav-mobile{ 
+    width: 100%; /** EXATAMENTE A MESMA MEDIDA DE #MAIN-CONTENT **/
+    height: 62px;
+    background-color: var(--corTemaPadrao1);
+    display: none;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+#bnt-voltar{
+    height: 100%;
+    flex: 1;
+    position: relative;
+}
+#bnt-voltar-img{
+    background: url('../img/seta-voltar-mobile.png') center center no-repeat;
+    width: 55px;
+    height: 42px;
+    float: left;
+    margin-top: 6px;
+    margin-left: 15px;
+}
+#bnt-voltar-img:hover{
+    cursor: pointer;
+}
+#titulo-pg{
+    height: 100%;
+    flex: 3;
+}
+#bnt-menu{
+    height: 100%;
+    flex: 1;
+}
+#bnt-menu-img{
+    background: url('../img/bnt-menu-mobile.png') center center no-repeat;
+    width: 55px;
+    height: 42px;
+    float: right;
+    margin-top: 6px;
+    margin-right: 15px;
+    z-index: 1;
+}
+#bnt-menu-img:hover{
+    cursor: pointer;
+}
+/** ----- NAV MOBILE F -----
+**/
+
+/** ----- DROPDOWN-1 I -----
+**/
+#dropdown-content ul{
+    list-style-type: none;
+}
+#dropdown-content{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 60px;
+    right: 0;
+    height: 100vh;
+}
+/** ----- DROPDOWN-1 F -----
+**/

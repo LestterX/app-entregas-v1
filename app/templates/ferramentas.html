@@ -1,0 +1,42 @@
+{%extends 'base.html'%}
+{%block title %}Ferramentas{%endblock%}
+{%block headconf %} 
+<link rel="icon" type="image/x-icon" href="../static/assets/img/ferramentas-icon-white.png">
+{%endblock%}
+{%block classBody%}id='pg-ferramentas'{%endblock%}
+{% block content %} 
+<div id="ferramentas-nav">
+    <a href="/ferramentas/gerenciador-de-links"><div class="bnt-ferramenta">
+        <p>Gerenciador</p>
+        <p>de Links</p>
+    </div></a>
+    <a href="/ferramentas/calc-banner-adesivo"><div class="bnt-ferramenta">
+        <p>Calcular</p>
+        <p>Banner/Adesivo</p>
+    </div></a>
+    <a href="/ferramentas/zap-sem-contato"><div class="bnt-ferramenta">
+        <p>Zap sem</p>
+        <p>Contato</p>
+    </div></a>
+</div>
+<div id="ferramentas-cont">
+    {% block ferramenta %}{% endblock %}
+</div>
+<script>
+    let ultimaFerramentaUsada = setTimeout((e) => {
+        if(localStorage.getItem('ultimaFerramenta') && localStorage.getItem('refresh') === 'yes'){
+            localStorage.setItem('refresh', 'no')
+            window.location = localStorage.getItem('ultimaFerramenta')
+            clearTimeout(ultimaFerramentaUsada)
+        }
+    }, 300) 
+    let click = document.addEventListener('click', () => localStorage.setItem('refresh', 'yes'))
+    let ferramenta = document.addEventListener('click', (e) => {
+        if(e.path[1]['classList']['value'] === 'bnt-ferramenta'){ //e.path[1]['id'] pega o id da div
+            // e.preventDefault()
+            localStorage.setItem('refresh', 'yes')
+            localStorage.setItem('ultimaFerramenta', e.path[2]) //e.path[2] pega o link dessa mesma div
+        }
+    })
+</script>
+{% endblock %}

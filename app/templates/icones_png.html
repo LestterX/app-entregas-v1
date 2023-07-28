@@ -1,0 +1,38 @@
+{% extends 'ferramentas.html'%}
+{% block ferramenta %}
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/gerenciador_de_links.css') }}" type="text/css"> -->
+<button onclick="geraImagem('Teste')">Gerar</button>
+<div id="container-ico"></div>
+{% for imagem in imagens_json %}
+    <img src="{{ imagem }}" alt="">
+{% endfor %}
+<script>
+function geraImagem(url){
+    let container = document.querySelector('#container-ico')
+    let img = document.createElement('img')
+    img.setAttribute('src', url)
+    img.setAttribute('alt', 'icone.png')
+    container.appendChild(img)
+}
+fetch('')
+</script>
+<style>
+    #container-ico{
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    #container-ico > img{
+        height: 50px;
+        width: auto;
+    }
+
+</style>
+<!-- <script src="{{ url_for('static', filename='assets/javascript/searchbar_ger_links.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/javascript/contador_ger_links.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/javascript/bnts_ger_links.js') }}"></script> -->
+{% endblock %}

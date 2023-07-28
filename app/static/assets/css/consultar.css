@@ -1,0 +1,92 @@
+:root{
+    --borderRadiusPadraoForm: 5px;
+    --corTemaPadrao1: rgba(255, 157, 0, 1);
+    --corTemaPadrao2: rgba(255, 157, 0, 0.5);
+    --corVerde1: rgb(25, 255, 0);
+}
+#lista-ordens{
+    width: 98%;
+    height: auto;
+    border-collapse: collapse;
+    /* table-layout: fixed; */
+}
+#lista-ordens button{
+    margin-left: 5px;
+    padding: 5px;
+    width: 70px;
+}
+th{
+    font-weight: 900;
+    background-color: var(--corTemaPadrao1);
+    border-right: 1px solid;
+    padding: 10px;
+}
+td{
+    padding: 5px;
+    vertical-align: middle;
+}
+#tabela-acoes{
+    width: 165px;
+}
+.table-centro{
+    text-align: center;
+}
+
+/** EDITAR_ORDENS
+**/
+#bnt-form-cliente button[type='submit']{
+    float: none;
+    margin-left: 38%;
+}
+#status{
+    width: 350px;
+    margin: 10px auto;
+    font-weight: 900;
+}
+#status-name{
+    border-top: 1px solid #000;
+    padding-top: 5px;
+    margin-bottom: 5px;
+}
+#status #pagoP{
+    margin-left: 40px;
+}
+#status #EntregueE{
+    margin-left: 75px;
+}
+#status select{
+    height: 35px;
+    width: 170px;
+    border-radius: var(--borderRadiusPadraoForm);
+    /* margin: 10px 0; */
+    font-size: 1em;
+    margin-left: 3px;
+}
+/** ANIMAÇÕES
+**/
+#lista-ordens button:hover{
+    transform: scale(1.16);
+}
+tr:hover{
+    background-color: var(--corTemaPadrao2);
+}
+
+/** MEDIA QUERY
+**/
+@media only screen and (max-width: 600px) {
+    #lista-ordens{
+        table-layout: fixed;
+        width: 100%;
+        font-size: 0.7em;
+    }
+    td{
+        word-wrap: break-word;
+    }
+    th{
+        font-size: 0.9em;
+        word-wrap: break-word;
+    }
+    #tabela-acoes button{
+        width: 100%;
+    }
+}

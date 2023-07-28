@@ -1,0 +1,72 @@
+{%extends 'base.html'%}
+{%block title %}Entregas{%endblock%} <!--ANTIGA PÁGINA HOME-->
+{%block headconf %} 
+<link rel="icon" type="image/x-icon" href="../static/assets/img/home-icon-white.png">
+<script src="{{ url_for('static', filename='assets/javascript/nova-ordem-no-refresh.js')}}"></script>
+{%endblock%}
+{%block classBody%}id='pg-home'{%endblock%}
+{% block content %} 
+<div id="semOrdens">
+    <h1>SEM ORDENS ABERTAS</h1>
+</div>
+<div id="cards">
+    {% for ordem in ordens%}
+    {% if ordem['pago'] == 'false' or ordem['coletado'] == 'false' or ordem['entregue'] == 'false' %}
+    <div class="card">
+        <div class="lado-esquerdo">
+            <div class="ordem-valor">
+                <span class="ordem">nº {{ ordem['id'] }}</span>
+                <span class="valor">R${{ ordem['valor'] }}</span>
+            </div>
+            <div class="conteudo-esquerdo">
+                <p> <b>Cliente:</b> {{ ordem['cliente'] }}</p>
+                <p><b>Endereço</b>: {{ ordem['endereco'] }}</p>
+                <span><b>Telefone</b>: {{ ordem['telefone'] }}</span><span class="foma-pgto">{{ ordem['forma_pagamento'].upper() }}</span>
+                <hr>
+                <textarea lang="pt-br" name="desc-ordem" id="desc-ordem" cols="44" 
+                rows="5">{{ ordem['descricao'] }}</textarea>
+            </div>
+            <div class="barra-de-fundo"></div>
+        </div>
+        <div class="lado-direito">
+            <div class="titulo-fechar">Ações</div>
+            <div class="conteudo-direito">
+                <a href="/fechar_ordem/{{ordem['id']}}/atualizar_pagar"><div class="bnt {% if ordem['pago'] == 'true' %}bnt-pressionado{% endif %}">Pago</div></a>
+                <a href="/fechar_ordem/{{ordem['id']}}/atualizar_coletar"><div class="bnt {% if ordem['coletado'] == 'true' %}bnt-pressionado{% endif %}">Coletado</div></a>
+                <a href="/fechar_ordem/{{ordem['id']}}/atualizar_entregar"><div class="bnt {% if ordem['entregue'] == 'true' %}bnt-pressionado{% endif %}">Entregue</div></a>
+                <a href="/imprimir/{{ordem['id']}}" target="_blank"><div class="bnt bnt-imprimir">Imprimir</div></a>
+            </div>
+            <div class="barra-de-fundo"></div>
+        </div>
+    </div>
+    <div id="linha-card"></div>
+    {% endif %}
+    {%endfor%}
+</div> <!--Final Cards-->
+<script>
+    function AtPagPorTempo(tempoDeEspera = 60){ //tempoDeEspera PADRÃO É 60 SEGUNDOS
+        let segundos = 0
+        setInterval(() => {
+            segundos += 1
+            if(segundos === tempoDeEspera) location.reload()
+        }, 1000)
+        document.addEventListener('mousemove', () => segundos = 0)
+    }AtPagPorTempo() //tempoDeEspera PERSONALIZADO EM SEGUNDOS
+</script>
+<script>
+    let car = fetch("/ordens-list", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    //   body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+</script>
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends 'ferramentas.html'%}
+{% block ferramenta %}
+<div id="formNum">
+    <div id="form">
+        <h1>Whatsapp</h1>
+        <input type="text" autofocus required placeholder="000" name="campoDDD" id="campoDDD" minlength="2" maxlength="3">
+        <input type="text" autofocus required placeholder="9 9999 9999" nome="campoNum" id="campoNum" minlength="9" maxlength="9">
+        <button id="bnt-ir" type="button">Ir para Chat</button>
+    </div>
+    <script>
+        let campoDDD = document.getElementById('campoDDD')
+        let campoNum = document.getElementById('campoNum')
+        let funcIr = () => {
+            url = `https://wa.me/55${campoDDD.value}${campoNum.value}`
+            if ((campoDDD.value && campoNum.value) !== ''){
+                window.open(url, '_blank').focus()
+            }else{
+                alert('Digite pelo menos 1 (um) número em cada campo')
+            }
+        } 
+        let bntIr = document.querySelector('#bnt-ir').addEventListener('click', () => {
+           funcIr()
+        })
+        document.addEventListener('keyup', (e) => {
+            switch (e.key){
+                case 'Enter':
+                    funcIr()
+                    break
+                default:
+                    break
+            }
+        })
+    </script>
+    <style>
+        :root{
+            --borderRadiusPadraoForm: 5px;
+            --corTemaPadrao1: rgba(255, 157, 0, 1);
+            --corTemaPadrao2: rgba(255, 157, 0, 0.5);
+            --corVerde1: rgb(25, 255, 0);
+        }
+        #formNum{
+            width: 100%;
+            height: auto;
+        }
+        #form{
+            background-color: var(--corTemaPadrao2);
+            border: 2px solid var(--corTemaPadrao1);
+            border-radius: var(--borderRadiusPadraoForm);
+            padding: 50px;
+            width: 20%;
+            min-width: 290px;
+            max-width: 300px;
+            margin: 0 auto;
+            margin-top: 35px;
+        }
+        #form input{
+            margin-left: 0;
+        }
+        #form input:hover{
+            transform: scale(1.05);
+        }
+        #campoDDD{
+            width: 23%;
+            height: 30px;
+        }
+        #campoNum{
+            width: 73%;
+            height: 30px;
+        }
+        #formNum button{
+            width: 100%;
+            height: 30px;
+            font-size: 1.1em;
+        }
+        #formNum button:hover{
+            transform: scale(1.07);
+            cursor: pointer;
+        }
+        #formNum h1{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</div>
+{% endblock %}
