@@ -1,4 +1,3 @@
-from venv import create
 from flask import Flask 
 from .static.database.database_controller import *
 
