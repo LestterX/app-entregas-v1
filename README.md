@@ -10,11 +10,17 @@ Depende:
 
 ### Para instalar esse projeto, execute:
 
-`make install`
+`make install` ou `pip install -r requirements.txt`
 
 ### Para executar:
 
-`make run`
+`make run` ou `python main.py`
+
+<br/>
+
+#### Deploy para visualização: <a href="https://app-entregas-v1.onrender.com" target="_blank">App Entregas</a>
+
+<br/>
 
 <h2>Funcionamento Geral</h2>
   Este sistema foi feito para agilizar o atendimento ao cliente. Sendo possível registrar seus pedidos de entrega e coleta
