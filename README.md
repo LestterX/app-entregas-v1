@@ -10,11 +10,11 @@ Depende:
 
 ### Para instalar esse projeto, execute:
 
-`make install`
+`make install` ou `pip install -r requirements.txt`
 
 ### Para executar:
 
-`make run`
+`make run` ou `python main.py`
 
 <h2>Funcionamento Geral</h2>
   Este sistema foi feito para agilizar o atendimento ao cliente. Sendo possível registrar seus pedidos de entrega e coleta
