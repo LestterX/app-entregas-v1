@@ -18,7 +18,7 @@ Depende:
 
 <br/>
 
-#### Deploy para visualização: [App Entregas](https://app-entregas-v1.onrender.com)
+#### Deploy para visualização: <a href="https://app-entregas-v1.onrender.com" target="_blank">App Entregas</a>
 
 <br/><br/>
 
