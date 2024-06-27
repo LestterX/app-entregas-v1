@@ -9,6 +9,7 @@ Depende:
 - pip
 
 ### Para instalar esse projeto, execute:
+**$$DESATUALIZADO$$**
 
 `make install` ou `pip install -r requirements.txt`
 

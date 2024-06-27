@@ -1,0 +1,17 @@
+networks:
+  main:
+    driver: bridge
+
+services:
+  app-entregas:
+    container_name: app-entregas-v1
+    build:
+      context: .
+      dockerfile: dockerfile
+    volumes:
+      - ./database:/app/static/database
+    restart: unless-stopped
+    ports:
+      - "5058:5050"
+    networks:
+      - main
