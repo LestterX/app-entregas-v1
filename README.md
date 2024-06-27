@@ -1,27 +1,40 @@
 <h1 style="text-align: center;">app-entregas-v1</h1>
 
+<br/>
+
+## Deploy para visualização: 
+<a href="https://app-entregas-v1.onrender.com" target="_blank">App Entregas Web Site</a>
+>**NOTA:** O sistema é apenas um protótipo para prova de conceito e não deve ser usado como produto final. Os dados registrados desaparecerão em algumas horas
+
+<br/>
+
 ## Instalação:
 
 Depende:
 
-- make
 - python3
 - pip
 
 ### Para instalar esse projeto, execute:
-**$$DESATUALIZADO$$**
 
-`make install` ou `pip install -r requirements.txt`
+  ```sh
+  python -m pip install -r ./requirements.txt --break-system-packages
+  ```
+  >**NOTA:** A tag `--break-system-packages` serve para forçar a intalação das bibliotecas sem um ambiente virtual VENV. Você pode remover se já tiver configurado
 
 ### Para executar:
 
-`make run` ou `python main.py`
+  ```sh
+  python main.py
+  ```
 
-<br/>
+### Utilizando o docker:
+  ```sh
+  docker compose up -d
+  ```
+  >**NOTA:** Após executar o comando o container está rodando e você pode acessar o sistema em seu <a href="http://127.0.0.1/5050">localhost</a> na porta `5050`
 
-#### Deploy para visualização: <a href="https://app-entregas-v1.onrender.com" target="_blank">App Entregas</a>
 
-<br/>
 
 <h2>Funcionamento Geral</h2>
   Este sistema foi feito para agilizar o atendimento ao cliente. Sendo possível registrar seus pedidos de entrega e coleta
@@ -54,4 +67,4 @@ Depende:
 
 <br><br><br>
 <span><b><i>Não há mais suporte ou atualizações para essa aplicação.<br> Será desenvolvido outra plataforma com tecnologias
-mais recentes e em javascript com TypeScript</i></b></span>
+mais recentes em javascript com TypeScript</i></b></span>
