@@ -1,12 +1,8 @@
 <h1 style="text-align: center;">app-entregas-v1</h1>
 
-<br/>
-
 ## Deploy para visualização: 
 <a href="https://app-entregas-v1.onrender.com" target="_blank">App Entregas Web Site</a>
 >**NOTA:** O sistema é apenas um protótipo para prova de conceito e não deve ser usado como produto final. Os dados registrados desaparecerão em algumas horas
-
-<br/>
 
 ## Instalação:
 
@@ -32,7 +28,7 @@ Depende:
   ```sh
   docker compose up -d
   ```
-  >**NOTA:** Após executar o comando o container está rodando e você pode acessar o sistema em seu <a href="http://127.0.0.1/5050">localhost</a> na porta `5050`
+  >**NOTA:** Após executar o comando, o container estará rodando e você pode acessar o sistema em seu <a href="http://127.0.0.1/5050">localhost</a> na porta `5050`
 
 
 
