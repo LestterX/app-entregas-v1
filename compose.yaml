@@ -12,6 +12,6 @@ services:
       - ./database:/app/static/database
     restart: unless-stopped
     ports:
-      - "5058:5050"
+      - "5050:5050"
     networks:
       - main
